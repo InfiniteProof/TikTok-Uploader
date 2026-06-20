@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Authorization Complete - MathShortsUploader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: -apple-system, Segoe UI, Arial, sans-serif;
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+    color: #222;
+  }
+  .checkmark {
+    font-size: 48px;
+    color: #2ecc71;
+    margin-bottom: 10px;
+  }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  p { color: #555; }
+  code {
+    display: block;
+    background: #f4f4f4;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 20px;
+    word-break: break-all;
+    font-size: 12px;
+    text-align: left;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+  <div class="checkmark">&#10003;</div>
+  <h1>Authorization Successful</h1>
+  <p>You can close this tab and return to MathShortsUploader.</p>
+  <p id="codeLabel" style="display:none;">Authorization code received:</p>
+  <code id="codeBox"></code>
+
+  <script>
+    // Display the authorization code from the URL for easy copying during testing
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    if (code) {
+      document.getElementById("codeLabel").style.display = "block";
+      document.getElementById("codeBox").textContent = code;
+    }
+  </script>
+</body>
+</html>
