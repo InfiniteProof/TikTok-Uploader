@@ -49,47 +49,50 @@
 
   <h1>MathShortsUploader</h1>
   <p>
-    MathShortsUploader is a content automation platform for creating and publishing
-    animated math explainer videos to social media. It enables authorized users to
-    generate short-form educational videos and publish them directly to their own
-    connected social media accounts.
+    MathShortsUploader automatically produces original animated math explainer videos
+    and publishes them to authorized social media accounts on a scheduled basis. It is
+    operated by a single account holder (the developer) and connects only to that
+    person's own TikTok, YouTube, and Instagram accounts.
   </p>
 
   <h2>What it does</h2>
   <p>
-    The platform uses mathematical animation software (Manim) and AI-assisted scripting
-    to produce high-quality, visually engaging videos covering one math concept per video.
-    Each video is rendered locally and published to the user's authorized accounts via
-    official platform APIs.
+    The app uses mathematical animation software (Manim) and AI-assisted scripting to
+    generate a short video explaining one math concept, with synthesized voiceover
+    narration. Each video is rendered locally on the operator's own device. Before any
+    video is published, the operator reviews it. For TikTok specifically, publishing
+    is completed through a review screen that requires the operator to manually choose
+    a privacy setting, manually choose who can comment, duet, or stitch the video, and
+    confirm consent before the video is sent to TikTok.
   </p>
 
-  <h2>Key features</h2>
-  <ul>
-    <li>Automated video generation from a topic library</li>
-    <li>Synthesized voiceover narration using neural text-to-speech</li>
-    <li>AI-generated titles, descriptions, and tags optimized per platform</li>
-    <li>Direct publishing to TikTok, YouTube, and Instagram via official APIs</li>
-    <li>Review workflow before any content is published</li>
-    <li>Scheduling and topic-deduplication to maintain consistent output</li>
-  </ul>
-
-  <h2>Who it's for</h2>
+  <h2>How TikTok is used</h2>
   <p>
-    MathShortsUploader is designed for educators, content creators, and developers who
-    want to produce and distribute educational math content at scale. Users connect their
-    own social media accounts and publish only to accounts they personally own and have
-    authorized.
+    The app uses TikTok Login Kit so the operator can authorize their own TikTok account
+    via OAuth 2.0. Once authorized, the app uses the Content Posting API (Direct Post,
+    file upload) to publish videos to that same account. No other TikTok account can be
+    connected or posted to. Before each TikTok post, the app retrieves the account's
+    current posting permissions from TikTok and presents them as the manual options
+    described above.
+  </p>
+
+  <h2>Who uses it</h2>
+  <p>
+    MathShortsUploader is operated by its developer for their own educational video
+    channel. It is not offered as a public multi-user service. Each connection requires
+    the account owner to personally complete TikTok's OAuth authorization; the app never
+    accesses any account that has not gone through that authorization.
   </p>
 
   <h2>Platform integrations</h2>
   <ul>
-    <li><strong>TikTok</strong> — Content Posting API (video upload and publishing)</li>
+    <li><strong>TikTok</strong> — Login Kit (OAuth 2.0) and Content Posting API (Direct Post / video.publish)</li>
     <li><strong>YouTube</strong> — YouTube Data API v3 (video upload)</li>
     <li><strong>Instagram</strong> — Instagram Graph API (video publish)</li>
   </ul>
 
   <footer>
-    MathShortsUploader &mdash; an independent educational content platform.<br />
+    MathShortsUploader &mdash; a personal educational video automation project.<br />
     Contact: <a href="mailto:infiniteproof9@gmail.com">infiniteproof9@gmail.com</a>
   </footer>
 

@@ -52,15 +52,16 @@
   <p class="updated">Last updated: June 2026</p>
 
   <p>
-    This Privacy Policy describes how MathShortsUploader ("Platform", "we", "us") handles
-    information in connection with your use of the Platform. We are committed to protecting
-    your privacy and handling data transparently.
+    This Privacy Policy describes how MathShortsUploader ("the app", "we", "us") handles
+    information. MathShortsUploader is operated by a single developer for their own
+    educational video channel; it is not offered as a public service, and no third party's
+    data is collected, processed, or stored.
   </p>
 
   <h2>1. Information We Collect</h2>
   <p>
-    MathShortsUploader does not collect, store, or transmit personal data from users or
-    website visitors to any external server operated by us. Specifically:
+    MathShortsUploader does not collect, store, or transmit personal data from website
+    visitors. Specifically:
   </p>
   <ul>
     <li>We do not use cookies, analytics trackers, or advertising scripts on this website.</li>
@@ -69,77 +70,81 @@
     <li>We do not log or store information about website visitors.</li>
   </ul>
 
-  <h2>2. Social Media Account Access</h2>
+  <h2>2. TikTok Account Access (Login Kit)</h2>
   <p>
-    The Platform connects to social media accounts (TikTok, YouTube, Instagram) exclusively
-    through each platform's official OAuth authentication system. The following applies to
-    all account access:
+    MathShortsUploader uses TikTok Login Kit so the operator can authorize their own TikTok
+    account through TikTok's official OAuth 2.0 flow. The following applies to that access:
   </p>
   <ul>
-    <li>The Platform only accesses accounts that the user has personally authorized via
-        official OAuth flows.</li>
-    <li>No data belonging to other users or third-party accounts is accessed, processed,
-        or stored.</li>
-    <li>Authentication tokens are stored locally on the user's own device and are never
-        transmitted to or stored on MathShortsUploader servers.</li>
-    <li>Access is limited strictly to publishing video content to the user's own
-        authorized accounts.</li>
+    <li>The app connects only to the single TikTok account that has been personally
+        authorized by its owner through TikTok's official login flow.</li>
+    <li>No other TikTok account, or any data belonging to another TikTok user, is accessed,
+        processed, or stored.</li>
+    <li>The <code>user.info.basic</code> scope is used only to confirm the identity of the
+        authorized account after login.</li>
+    <li>Access tokens are stored locally on the operator's own device and are never
+        transmitted to or stored on any external server.</li>
   </ul>
 
-  <h2>3. TikTok API Data</h2>
+  <h2>3. TikTok Content Posting API Data</h2>
   <p>
-    When using the TikTok Content Posting API, the Platform accesses only the permissions
-    required to upload and publish video content on behalf of the authorized user. We do not
-    access TikTok user profile data, follower information, messages, or any data beyond what
-    is required for video publishing. Data returned by the TikTok API is used only to confirm
-    successful upload and is not stored beyond the current session.
+    When publishing to TikTok, the app uses the <code>video.publish</code> scope to post
+    video content directly (Direct Post) to the authorized account. Before each post, the
+    app requests the account's current posting permissions (allowed privacy levels and
+    whether comment, duet, or stitch are enabled) and presents these as manual choices that
+    must be selected before publishing; nothing is pre-selected. We do not access TikTok
+    follower information, messages, or any data beyond what is required to complete a post.
+    Data returned by the TikTok API is used only to confirm a successful upload and is not
+    stored beyond the current session.
   </p>
 
-  <h2>4. Video Content</h2>
+  <h2>4. YouTube and Instagram</h2>
   <p>
-    Videos are generated and rendered locally on the user's own device. No video content
-    is uploaded to or stored on MathShortsUploader servers. Video files are published
-    directly from the user's device to the respective social media platform APIs.
+    The app similarly connects only to the operator's own YouTube and Instagram accounts via
+    each platform's official authentication system, and publishes only to those accounts.
   </p>
 
-  <h2>5. Third-Party Platforms</h2>
+  <h2>5. Video Content</h2>
   <p>
-    When you connect social media accounts, you are also subject to the privacy policies
-    of those platforms. We encourage you to review the privacy policies of TikTok, YouTube,
-    and Instagram independently. MathShortsUploader is not responsible for the data
+    Videos are generated and rendered locally on the operator's own device. No video content
+    is uploaded to or stored on any MathShortsUploader server. Video files are published
+    directly from the operator's device to the respective platform APIs.
+  </p>
+
+  <h2>6. Third-Party Platforms</h2>
+  <p>
+    Your use of TikTok, YouTube, and Instagram through this app is also subject to the
+    privacy policies of those platforms. MathShortsUploader is not responsible for the data
     practices of these third-party platforms.
   </p>
 
-  <h2>6. Data Security</h2>
+  <h2>7. Data Security</h2>
   <p>
-    We are committed to keeping your credentials secure. API tokens and access credentials
-    are stored only on the user's local device. Users are responsible for keeping their
-    devices and credentials secure. If you believe your credentials have been compromised,
-    you should revoke API access immediately through each platform's developer or security
-    settings.
+    API tokens and access credentials are stored only on the operator's local device. If
+    credentials are believed to be compromised, access should be revoked immediately through
+    the relevant platform's developer or security settings.
   </p>
 
-  <h2>7. Children's Privacy</h2>
+  <h2>8. Children's Privacy</h2>
   <p>
     MathShortsUploader is not directed at children under the age of 13. We do not knowingly
     collect any information from children under 13.
   </p>
 
-  <h2>8. Changes to This Policy</h2>
+  <h2>9. Changes to This Policy</h2>
   <p>
     We may update this Privacy Policy from time to time. Any changes will be reflected on
-    this page with an updated date. Continued use of the Platform after changes constitutes
-    acceptance of the updated policy.
+    this page with an updated date.
   </p>
 
-  <h2>9. Contact</h2>
+  <h2>10. Contact</h2>
   <p>
-    For privacy-related questions or requests, please contact us at:
+    For privacy-related questions, contact:
     <a href="mailto:infiniteproof9@gmail.com">infiniteproof9@gmail.com</a>
   </p>
 
   <footer>
-    MathShortsUploader &mdash; an independent educational content platform.
+    MathShortsUploader &mdash; a personal educational video automation project.
   </footer>
 
 </body>
