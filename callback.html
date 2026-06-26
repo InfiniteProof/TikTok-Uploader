@@ -47,11 +47,7 @@
     document.getElementById("codeLabel").style.display = "block";
     document.getElementById("codeBox").textContent = code;
     
-    fetch('http://localhost:5000/auth/callback?' + window.location.search.slice(1))
-      .then(() => { window.location.href = 'http://localhost:5000'; })
-      .catch(() => { 
-        document.querySelector('p').textContent = 'Could not reach local server. Make sure app.py is running, then retry.';
-      });
+    window.location.href = 'http://localhost:5000/auth/callback?' + window.location.search.slice(1);
   }
   </script>
 </body>
