@@ -41,13 +41,18 @@
   <code id="codeBox"></code>
 
   <script>
-    // Display the authorization code from the URL for easy copying during testing
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
-    if (code) {
-      document.getElementById("codeLabel").style.display = "block";
-      document.getElementById("codeBox").textContent = code;
-    }
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("code");
+  if (code) {
+    document.getElementById("codeLabel").style.display = "block";
+    document.getElementById("codeBox").textContent = code;
+    
+    fetch('http://localhost:5000/auth/callback?' + window.location.search.slice(1))
+      .then(() => { window.location.href = 'http://localhost:5000'; })
+      .catch(() => { 
+        document.querySelector('p').textContent = 'Could not reach local server. Make sure app.py is running, then retry.';
+      });
+  }
   </script>
 </body>
 </html>
