@@ -49,7 +49,7 @@ TIKTOK_CLIENT_KEY = os.environ.get("TIKTOK_CLIENT_KEY")
 TIKTOK_CLIENT_SECRET = os.environ.get("TIKTOK_CLIENT_SECRET")
 TIKTOK_TOKEN_FILE = os.environ.get("TIKTOK_TOKEN_FILE", "tiktok_token.json")
 # Must exactly match a Redirect URI registered on your TikTok app.
-TIKTOK_REDIRECT_URI = "https://infiniteproof.github.io/TikTok-Uploader/callback"
+TIKTOK_REDIRECT_URI = "https://infiniteproof.github.io/AutoPost-Studio/callback"
 
 def get_latest_review_video():
     videos = glob.glob(os.path.join(REVIEW_DIR, "*.mp4"))
