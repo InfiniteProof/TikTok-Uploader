@@ -1,5 +1,4 @@
-[README.md](https://github.com/user-attachments/files/29542956/README.md)
-# TikTok Uploader
+# AutoPost-Studio
 
 A small, open source web app for reviewing and publishing pre-made videos to
 TikTok using TikTok's official Login Kit and Content Posting API (Direct Post).
@@ -31,10 +30,16 @@ and add these products:
 - **Login Kit**
 - **Content Posting API** (with Direct Post enabled)
 
-Add a Redirect URI matching where you'll run this app, for example:
+Add the following as a Redirect URI on your TikTok app — this must be exact:
 ```
-http://localhost:5000/auth/callback
+https://infiniteproof.github.io/AutoPost-Studio/callback
 ```
+
+> **Why a GitHub Pages URL?** TikTok requires a publicly accessible HTTPS
+> redirect URI. This app uses a hosted callback page that receives the
+> authorization code from TikTok and forwards it to your local app at
+> `localhost:5000/auth/callback`. Nothing is stored on GitHub Pages — it's
+> just a relay.
 
 You'll be given a **Client Key** and **Client Secret** — keep the secret
 private, never commit it to a public repo.
@@ -57,16 +62,11 @@ setx TIKTOK_CLIENT_KEY "your_client_key"
 setx TIKTOK_CLIENT_SECRET "your_client_secret"
 ```
 
-If you're running on a different host/port than `localhost:5000`, also set:
-```bash
-export TIKTOK_REDIRECT_URI="http://your-host:port/auth/callback"
-```
-(must exactly match a Redirect URI registered on your TikTok app)
-
 ### 4. Add a video to review
 
-Create a `review/` folder next to `app.py`, and put an `.mp4` file in it.
-Optionally add a matching `.json` file with the same name containing:
+Create a `review/` folder **one level above** `app.py` (i.e. next to the
+repo folder, not inside it), and put an `.mp4` file in it. Optionally add a
+matching `.json` file with the same name containing:
 ```json
 {
   "title": "Your video title",
